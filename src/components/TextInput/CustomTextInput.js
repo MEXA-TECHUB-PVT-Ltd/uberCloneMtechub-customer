@@ -153,7 +153,6 @@ const styles = StyleSheet.create({
     fontSize: hp(1.6),
     marginHorizontal: wp(5),
     fontFamily: fontFamily.Nunito_SemiBold,
-    fontWeight:'500',
     //color: '#6B6B6B',
     width: wp(20),
     color:"#000", 

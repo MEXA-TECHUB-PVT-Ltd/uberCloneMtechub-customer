@@ -271,7 +271,7 @@ const Dashboard = ({navigation, route}) => {
               style={{
                 flexDirection: 'row',
                 justifyContent: 'space-between',
-                paddingHorizontal: wp(3),
+                paddingHorizontal: wp(5),
                 alignItems: 'center',
               }}>
               <View
@@ -289,16 +289,16 @@ const Dashboard = ({navigation, route}) => {
                   type={'iconinput'}
                   // term={email}
                   placeholder="Where are you?"
-                  view_widthset={80}
-                  textinput_widthset={70}
+                  view_widthset={78}
+                  textinput_widthset={68}
                   // onTermChange={newPassword => setPassword(newPassword)}
                 />
                 <CustomTextInput
                   type={'iconinput'}
                   // term={email}
-                  placeholder="Where are you?"
-                  view_widthset={80}
-                  textinput_widthset={70}
+                  placeholder="Where you want to go?"
+                  view_widthset={78}
+                  textinput_widthset={68}
                   // onTermChange={newPassword => setPassword(newPassword)}
                 />
               </View>
