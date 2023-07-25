@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     paddingLeft: wp(2),
     borderColor: '#F2F2F2',
     borderWidth: wp(0.3),
+    // borderWidth: wp(0.3),
   },
   logo: {
     height: wp(16),
