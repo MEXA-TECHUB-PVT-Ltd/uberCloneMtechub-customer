@@ -87,7 +87,6 @@ const CreateAccount = ({navigation}) => {
           term={password}
           view_widthset={85}
           textinput_widthset={75}
-          placeholder="Password"
           onTermChange={newPassword => setPassword(newPassword)}
           // mode={'password'}
           secureTextEntry={data.secureTextEntry ? true : false}
@@ -100,7 +99,6 @@ const CreateAccount = ({navigation}) => {
           term={password}
           view_widthset={85}
           textinput_widthset={67}
-          placeholder="Password"
           onTermChange={newPassword => setPassword(newPassword)}
           mode={'password'}
           secureTextEntry={data.secureTextEntry ? true : false}
@@ -113,7 +111,6 @@ const CreateAccount = ({navigation}) => {
           term={password}
           view_widthset={85}
           textinput_widthset={67}
-          placeholder="Password"
           onTermChange={newPassword => setPassword(newPassword)}
           mode={'password'}
           secureTextEntry={data.secureTextEntry ? true : false}

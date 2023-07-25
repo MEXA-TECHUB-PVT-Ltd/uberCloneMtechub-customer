@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     borderStyle: 'dotted',
     borderWidth: 1,
     borderRadius: 1,
-    height: hp(4),
+    height: hp(5),
     borderColor: 'black',
   },
 });

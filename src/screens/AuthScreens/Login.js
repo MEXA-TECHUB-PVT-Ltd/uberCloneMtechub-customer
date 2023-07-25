@@ -46,7 +46,7 @@ import {
 
 const Login = ({navigation}) => {
   ///////////////data states////////////////////
-  const [email, setEmail] = React.useState('');
+  const [email, setEmail] = React.useState('exampl...');
   const [password, setPassword] = React.useState('');
 
   //password eye function and states
@@ -95,11 +95,7 @@ const Login = ({navigation}) => {
         term={email}
         view_widthset={85}
         textinput_widthset={75}
-        placeholder="Password"
-        onTermChange={newPassword => setPassword(newPassword)}
-        // mode={'password'}
-        secureTextEntry={data.secureTextEntry ? true : false}
-        onclick={() => updateSecureTextEntry()}
+        onTermChange={text => setEmail(text)}
         PlaceholderText={'Phone Number*'}
       />
       <CustomTextInput
@@ -107,8 +103,7 @@ const Login = ({navigation}) => {
         term={password}
         view_widthset={85}
         textinput_widthset={67}
-        placeholder="Password"
-        onTermChange={newPassword => setPassword(newPassword)}
+        onTermChange={text => setPassword(text)}
         mode={'password'}
         secureTextEntry={data.secureTextEntry ? true : false}
         onclick={() => updateSecureTextEntry()}

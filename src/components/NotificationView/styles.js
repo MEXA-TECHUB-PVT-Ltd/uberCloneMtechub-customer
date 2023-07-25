@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     height: wp(16),
-    width: wp(13),
+    width: wp(15),
   },
 
   notimaintext: {

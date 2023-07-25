@@ -32,7 +32,9 @@ const NotificationView = ({
   icon,
   notiicon,
   notisubtext,
+  noti_image
 }) => {
+  console.log("heree image",noti_image)
   return (
     <View>
       <TouchableOpacity onPress={labelPress} style={styles.mainview}>
@@ -43,7 +45,7 @@ const NotificationView = ({
             width: wp(70),
           }}>
           <Image
-            source={appImages.GoogleLogo}
+            source={noti_image}
             style={styles.logo}
             resizeMode="contain"
           />

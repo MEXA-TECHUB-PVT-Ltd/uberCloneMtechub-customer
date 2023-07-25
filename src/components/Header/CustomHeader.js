@@ -42,12 +42,6 @@ const CustomHeader = ({
       onPress={onpresseacrh}
       >
         {searchicon}
-        {/* <Icon
-          name={searchicon}
-          size={25}
-          color={'white'}
-          onPress={onpresseacrh}
-        /> */}
       </TouchableOpacity>
     </View>
   );

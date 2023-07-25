@@ -348,7 +348,7 @@ const OnGoingTrip = ({navigation, route}) => {
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-            <Text style={styles.btntext}>Set as pickup Location</Text>
+            <Text style={styles.btntext}>Share Location</Text>
           </View>
           <View
             style={{
@@ -359,7 +359,7 @@ const OnGoingTrip = ({navigation, route}) => {
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-            <Text style={styles.btntext}>Set as dropoff Location</Text>
+            <Text style={styles.btntext}>Add a Stop</Text>
           </View>
         </View>
 }

@@ -67,14 +67,18 @@ const EnableLocation = ({navigation}) => {
         // loading={loading}
         // disabled={disable}
         onPress={() => {
-          navigation.navigate('Login');
+          navigation.navigate('Drawerroute');
         }}
       />
-      <View style={{marginTop:hp(15),alignItems:'center',justifyContent:'center'}}>
+      <TouchableOpacity style={{marginTop:hp(15),alignItems:'center',justifyContent:'center'}}
+            onPress={() => {
+              navigation.navigate('Drawerroute');
+            }}
+      >
       <Text style={styles.endtext}>
       Skip for now
       </Text>
-      </View>
+      </TouchableOpacity>
 
     </SafeAreaView>
   );
