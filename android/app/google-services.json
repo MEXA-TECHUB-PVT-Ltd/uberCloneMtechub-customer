@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "326756983865",
+    "project_id": "uberclone-d7a13",
+    "storage_bucket": "uberclone-d7a13.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326756983865:android:b89e5f6d9f10b93a5199e8",
+        "android_client_info": {
+          "package_name": "com.uberclonemtechub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326756983865-dicmchlbgb0in955aevgrvi2p34tiklk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8esuZTC8tgwvxIItaoktVhr5kihQhnUI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326756983865-dicmchlbgb0in955aevgrvi2p34tiklk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326756983865:android:ec97d8cc1f63128b5199e8",
+        "android_client_info": {
+          "package_name": "com.uberclonemtechubrider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326756983865-1ffigt398j7qg6oqd1gia32597k7ins3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.uberclonemtechubrider",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "326756983865-dicmchlbgb0in955aevgrvi2p34tiklk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8esuZTC8tgwvxIItaoktVhr5kihQhnUI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326756983865-dicmchlbgb0in955aevgrvi2p34tiklk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -20,29 +20,12 @@ import {appImages} from '../../../constants/images';
 ////////////notification data///////////
 import {notification_data} from '../../../App_dummy_App/data/Notification_list';
 
-////////////////dataa//////////////////
-const DATA = [
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'First Item',
-  },
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Second Item',
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Third Item',
-  },
-];
-
 const Notification = ({navigation}) => {
   /////////////Get Notification/////////////
   const [Notifications, setNotifications] = useState('');
 
   ///render function
   const renderItem = ({item}) => {
-    console.log("heree chats dtaa:",item)
     return (
       <NotificationView
         noti_image={item.noti_icon}
@@ -63,9 +46,9 @@ const Notification = ({navigation}) => {
   };
   return (
     <SafeAreaView style={styles.container1}>
-      {/* <ScrollView 
+      <ScrollView 
      showsVerticalScrollIndicator={false}
-     showsHorizontalScrollIndicator={false}> */}
+     showsHorizontalScrollIndicator={false}>
       <CustomHeader
         headerlabel={'Notifications'}
         iconPress={() => {
@@ -76,9 +59,10 @@ const Notification = ({navigation}) => {
       <FlatList
         data={notification_data}
         renderItem={renderItem}
+        scrollEnabled={false}
         keyExtractor={item => item.id}
       />
-      {/* </ScrollView> */}
+      </ScrollView>
     </SafeAreaView>
   );
 };

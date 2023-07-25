@@ -8,6 +8,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HistoryRides from '../../screens/DrawerScreens/HistoryRides';
 import RidesDetail from '../../screens/DrawerScreens/RidesDetail';
 
+/////////////chat screen///////
+//import ChatScreen from '../../screens/DrawerScreens/Chat/ChatScreen';
 
 const Stack = createNativeStackNavigator();
 function HistoryNav() {
@@ -27,6 +29,13 @@ function HistoryNav() {
           headerShown: false,
         }}
       />
+      {/* <Stack.Screen
+        name="ChatScreen"
+        component={ChatScreen}
+        options={{
+          headerShown: false,
+        }}
+      /> */}
     </Stack.Navigator>
   );
 }

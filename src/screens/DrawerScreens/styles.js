@@ -20,7 +20,7 @@ backgroundColor:'white'
   btntext: {
     color: 'black',
     fontSize: hp(1.6),
-    fontFamily: fontFamily.Nunito_Medium,
+    fontFamily: fontFamily.Nunito_Bold,
     // fontWeight: '500',
   },
   balancetext:{
@@ -30,7 +30,7 @@ backgroundColor:'white'
   },
   pricetext:{
     color:'#000',
-    fontFamily:fontFamily.Nunito_SemiBold,
+    fontFamily:fontFamily.Nunito_Bold,
     fontSize:hp(2)
   },
 

@@ -46,7 +46,7 @@ import {
 
 const Login = ({navigation}) => {
   ///////////////data states////////////////////
-  const [email, setEmail] = React.useState('exampl...');
+  const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
   //password eye function and states

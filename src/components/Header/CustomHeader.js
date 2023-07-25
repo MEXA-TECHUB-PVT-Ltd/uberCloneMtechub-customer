@@ -25,6 +25,7 @@ const CustomHeader = ({
   type,
   searchicon,
 }) => {
+  console.log("hree props",searchicon)
   return (
     <View style={[styles.headerView]}>
       <View style={styles.lefticonview}>
@@ -38,7 +39,7 @@ const CustomHeader = ({
         <Text style={styles.label}>{headerlabel}</Text>
       </View>
 
-      <TouchableOpacity style={styles.righticonview}
+      <TouchableOpacity style={[styles.righticonview]}
       onPress={onpresseacrh}
       >
         {searchicon}

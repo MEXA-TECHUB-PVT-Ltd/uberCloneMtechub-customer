@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
     color: Colors.MainTextColor,
     fontSize: hp(2.5),
     fontFamily: fontFamily.Nunito_Bold,
-    fontWeight: '700',
     width: wp(90),
     textAlign: 'center',
     lineHeight: hp(3),
@@ -55,8 +54,7 @@ const styles = StyleSheet.create({
   subtext: {
     color: Colors.SubTextColor,
     fontSize: hp(1.6),
-    fontFamily: fontFamily.Nunito_Light,
-    fontWeight: '500',
+    fontFamily: fontFamily.Nunito_SemiBold,
     width: wp(75),
     textAlign: 'center',
     lineHeight: hp(2.5),

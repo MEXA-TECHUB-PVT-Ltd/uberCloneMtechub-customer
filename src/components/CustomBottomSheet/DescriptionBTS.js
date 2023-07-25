@@ -80,21 +80,23 @@ const DescriptionBottomSheet = props => {
         </TouchableOpacity> */}
       </View>
 
-      <View style={{marginTop: hp(2), paddingHorizontal: wp(7)}}>
-        <Text style={styles.subtext}>{props.subtitle}</Text>
-      </View>
-      <CustomTextInput
-        type={'withouticoninput'}
+    <View style={{paddingHorizontal:wp(8),marginTop:hp(2)}}>
+    <CustomTextInput
+        type={'withouticoninput'} 
         texterror={'invalid'}
         view_widthset={85}
         textinput_widthset={67}
-        mutilenght={15}
+        mutilenght={13}
         term={description}
         multiline={true}
-        placeholder="example..."
         onTermChange={desc => setDescription(desc)}
         from={'report'}
+        PlaceholderText={"Username"}
+        focus={"true"}
+        
       />
+    </View>
+ 
 
       <CustomButtonhere
         title={'Submit'}
@@ -103,8 +105,9 @@ const DescriptionBottomSheet = props => {
         loading={loading}
         disabled={disable}
         onPress={() => {
+          props.onpress()
           //navigation.navigate("Drawerroute");
-          formValidation();
+    
         }}
       />
 

@@ -36,6 +36,22 @@ const CancleMenu = ({navigation}) => {
     ///////////////Modal States///////////////
     const [modalVisible, setModalVisible] = useState(false);
 
+    const [checkedIndex, setCheckedIndex] = useState(null);
+
+    const checkboxes = [
+      { label: 'Writing for long Driver', value: 'option1' },
+      { label: 'Unable to contact Driver', value: 'option2' },
+      { label: 'The Price is not Reasonable', value: 'option3' },
+      { label: 'Wrong Address Shown', value: 'option4' },
+      { label: 'Driver Denied to come to Pickup', value: 'option5' },
+      { label: 'Driver Denied to go to Destination', value: 'option6' },
+      // Add more options as needed
+    ];
+  
+    const handleCheckboxPress = (index) => {
+      setCheckedIndex(index);
+    };
+
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       {/* <ScrollView 
@@ -48,92 +64,37 @@ const CancleMenu = ({navigation}) => {
         }}
         icon={'chevron-back'}
       />
+
+
       <View style={{paddingHorizontal: wp(5), marginTop: hp(2)}}>
         <Text style={styles.maintext}>
           Please Select the Reason for Cancellation
         </Text>
+        <View>
+      {checkboxes.map((checkbox, index) => (
+        // <Checkbox
+        //   key={index}
+        //   label={checkbox.label}
+        //   checked={checkedIndex === index}
+        //   onPress={() => handleCheckboxPress(index)}
+        // />
         <View style={styles.checkview}>
-          {/* <CheckIcon width={wp(6)} height={hp(5)} /> */}
-          <Checkbox
-            status={checked ? 'checked' : 'unchecked'}
-            uncheckedColor={'#E2E9EC'}
-            color={Colors.Appthemecolor}
-            onPress={() => {
-              setChecked(!checked);
-            }}
-          />
-          <Text style={styles.checktext}>Writing for long Driver</Text>
-        </View>
-        <View style={styles.checkview}>
-          {/* <CheckIcon width={wp(6)} height={hp(5)} /> */}
-          <Checkbox
-            status={checked ? 'checked' : 'unchecked'}
-            uncheckedColor={'#E2E9EC'}
-            color={Colors.Appthemecolor}
-            onPress={() => {
-              setChecked(!checked);
-            }}
-          />
-          <Text style={styles.checktext}>
-            Unable to contact Driver
-          </Text>
-        </View>
-        <View style={styles.checkview}>
-          {/* <CheckIcon width={wp(6)} height={hp(5)} /> */}
-          <Checkbox
-            status={checked ? 'checked' : 'unchecked'}
-            uncheckedColor={'#E2E9EC'}
-            color={Colors.Appthemecolor}
-            onPress={() => {
-              setChecked(!checked);
-            }}
-          />
-          <Text style={styles.checktext}>
-            The Price is not Reasonable
-          </Text>
-        </View>
-        <View style={styles.checkview}>
-          {/* <CheckIcon width={wp(6)} height={hp(5)} /> */}
-          <Checkbox
-            status={checked ? 'checked' : 'unchecked'}
-            uncheckedColor={'#E2E9EC'}
-            color={Colors.Appthemecolor}
-            onPress={() => {
-              setChecked(!checked);
-            }}
-          />
-          <Text style={styles.checktext}>
-          Wrong Address Shown
-          </Text>
-        </View>
-        <View style={styles.checkview}>
-          {/* <CheckIcon width={wp(6)} height={hp(5)} /> */}
-          <Checkbox
-            status={checked ? 'checked' : 'unchecked'}
-            uncheckedColor={'#E2E9EC'}
-            color={Colors.Appthemecolor}
-            onPress={() => {
-              setChecked(!checked);
-            }}
-          />
-          <Text style={styles.checktext}>
-          Driver Denied to come to Pickup
-          </Text>
-        </View>
-        <View style={styles.checkview}>
-          {/* <CheckIcon width={wp(6)} height={hp(5)} /> */}
-          <Checkbox
-            status={checked ? 'checked' : 'unchecked'}
-            uncheckedColor={'#E2E9EC'}
-            color={Colors.Appthemecolor}
-            onPress={() => {
-              setChecked(!checked);
-            }}
-          />
-          <Text style={styles.checktext}>
-          Driver Denied to go to Destination
-          </Text>
-        </View>
+        {/* <CheckIcon width={wp(6)} height={hp(5)} /> */}
+        <Checkbox
+        key={index}
+        label={checkbox.label}
+          // /status={checkedIndex ? 'checked' : 'unchecked'}
+          //status={checkedIndex === index}
+          status={checkedIndex === index ? 'checked' : 'unchecked'}
+          onPress={() => handleCheckboxPress(index)}
+          uncheckedColor={'#E2E9EC'}
+          color={Colors.Appthemecolor}
+        />
+        <Text style={styles.checktext}>{checkbox.label}</Text>
+      </View>
+      ))}
+    </View>
+ 
       </View>
       <CustomButtonhere
         title={'Submit'}
@@ -155,7 +116,7 @@ const CancleMenu = ({navigation}) => {
         type={'single_btn'}
         onPress={() => {
           setModalVisible(false);
-          //navigation.navigate('CreateProfile');
+          navigation.navigate('Review');
         }}
       />
     </SafeAreaView>

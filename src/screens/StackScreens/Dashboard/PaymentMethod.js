@@ -275,7 +275,7 @@ const PaymentMethod = ({navigation, route}) => {
               // disabled={disable}
               onPress={() => {
                 setModalVisible(true);
-                navigation.navigate('OnGoingTrip');
+   
               }}
             />
             <LottieModal
@@ -286,6 +286,7 @@ const PaymentMethod = ({navigation, route}) => {
               onPress={() => {
                 //navigation.navigate('Login'),
                  setModalVisible(false);
+                 navigation.navigate('OnGoingTrip');
               }}
             />
           </View>

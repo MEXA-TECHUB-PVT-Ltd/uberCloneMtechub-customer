@@ -34,14 +34,12 @@ const NotificationView = ({
   notisubtext,
   noti_image
 }) => {
-  console.log("heree image",noti_image)
   return (
     <View>
       <TouchableOpacity onPress={labelPress} style={styles.mainview}>
         <View
           style={{
             flexDirection: 'row',
-            marginTop: hp(0),
             width: wp(70),
           }}>
           <Image
@@ -49,7 +47,7 @@ const NotificationView = ({
             style={styles.logo}
             resizeMode="contain"
           />
-          <View style={{marginLeft: wp(3), justifyContent: 'center'}}>
+          <View style={{marginLeft: wp(2), justifyContent: 'center'}}>
             <Text style={styles.notimaintext}>{notitext}</Text>
             <Text style={styles.notisubtext}>{notisubtext}</Text>
           </View>
