@@ -159,7 +159,7 @@ const Review = ({navigation, route}) => {
         // loading={loading}
         // disabled={disable}
         onPress={() => {
-          navigation.navigate('WelcomeScreen');
+          navigation.navigate('Dashboard');
         }}
       />
       </View>

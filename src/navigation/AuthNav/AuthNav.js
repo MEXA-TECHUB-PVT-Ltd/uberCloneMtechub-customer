@@ -13,6 +13,9 @@ import ResetPassword from '../../screens/AuthScreens/Resetpassword';
 import Verification from '../../screens/AuthScreens/Verification';
 import EnableLocation from '../../screens/AuthScreens/EnableLocation';
 
+/////////////chatscreen/////
+//import ChatScreen from '../../screens/DrawerScreens/Chat/ChatScreen';
+
 import Drawerroute from '../Drawer/Drawer';
 
 const Stack = createNativeStackNavigator();
@@ -68,7 +71,7 @@ function AuthNav() {
           headerShown: false,
         }}
       />
-            <Stack.Screen
+      <Stack.Screen
         name="EnableLocation"
         component={EnableLocation}
         options={{
@@ -82,6 +85,13 @@ function AuthNav() {
           headerShown: false,
         }}
       />
+      {/* <Stack.Screen
+        name="ChatScreen"
+        component={ChatScreen}
+        options={{
+          headerShown: false,
+        }}
+      /> */}
     </Stack.Navigator>
   );
 }

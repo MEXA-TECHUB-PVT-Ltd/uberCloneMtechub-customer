@@ -73,26 +73,27 @@ const MyWallet = ({navigation}) => {
     borderWidth: wp(0.3),padding:hp(2)}}>
         <View style={{flexDirection:'row',justifyContent:'space-between'}}>
 <View style={{flexDirection:'row',alignItems:'center'}}>
-<Wallet width={wp(18)} height={hp(8)} />
+<Wallet width={wp(15)} height={hp(8)} />
 <View style={{marginLeft:wp(3)}}>
     <Text style={styles.balancetext}>Balance</Text>
     <Text style={styles.pricetext}>$ 2,555</Text>
 </View>
 </View>
-<Cash width={wp(15)} height={hp(6)} />
+<Cash width={wp(12)} height={hp(6)} />
 </View>
 <View
               style={{
                 flexDirection: 'row',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                marginTop: hp(5),
+                marginTop: hp(4),
+                paddingHorizontal:wp(5)
               }}>
               <View
                 style={{
                   backgroundColor: Colors.Appthemecolor,
-                  width: wp(35 ),
-                  height: hp(5),
+                  width: wp(30 ),
+                  height: hp(4.5),
                   borderRadius: wp(3),
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -102,8 +103,8 @@ const MyWallet = ({navigation}) => {
               <View
                 style={{
                   backgroundColor: Colors.Appthemecolor,
-                  width: wp(35),
-                  height: hp(5),
+                  width: wp(30),
+                  height: hp(4.5),
                   borderRadius: wp(3),
                   alignItems: 'center',
                   justifyContent: 'center',

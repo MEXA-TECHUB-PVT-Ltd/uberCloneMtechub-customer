@@ -53,7 +53,7 @@ const CustomTextInput = ({
   focus
 }) => {
   const [isfocused, setisFocused] = useState(false);
-  console.log('hree props,',  autoFocushere)
+
   return (
     <View>
       <View>
@@ -95,7 +95,7 @@ const CustomTextInput = ({
               width:wp(textinput_widthset),
               textAlignVertical: multiline === true ? 'top' : null,
               height: multiline === true ? hp(16) : null,
-              marginTop: multiline === true ? hp(0) : null,
+              marginTop: multiline === true ? hp(3) : null,
               marginHorizontal: type === 'iconinput' ? wp(2) : wp(5),
             },
           ]}

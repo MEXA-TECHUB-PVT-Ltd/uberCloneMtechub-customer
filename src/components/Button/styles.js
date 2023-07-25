@@ -22,7 +22,7 @@ alignSelf:'center',
     },
 buttoncontent:
 {
-    height: hp(6.5),
+    height: hp(6.3),
     backgroundColor:Colors.Appthemecolor,
     padding:0,
     color:Colors.Appthemecolor
@@ -30,7 +30,7 @@ buttoncontent:
 button:
 {
     borderRadius:wp(2.5),
-    height: hp(6.5),
+    height: hp(6.3),
     alignItems:'center',
     backgroundColor:Colors.Appthemecolor,
 },

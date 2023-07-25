@@ -37,13 +37,13 @@ const styles = StyleSheet.create({
   righticonview: {
     justifyContent: 'center',
     marginRight: wp(0),
-    width:wp(10),
+    width:wp(20),
     //backgroundColor:'yellow'
   },
   labelView: {
     marginHorizontal: wp(0),
     flexDirection: 'column',
-    width: wp(70),
+    width: wp(60),
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: hp(5),

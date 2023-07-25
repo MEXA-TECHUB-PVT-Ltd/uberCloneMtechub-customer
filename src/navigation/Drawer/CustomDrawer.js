@@ -114,7 +114,7 @@ export const DrawerContent = props => {
               icon={({color, size}) => <Chat width={wp(5)} height={hp(3)} />}
               labelStyle={styles.subtitle}
               onPress={() => {
-                props.navigation.navigate('MyGear');
+                props.navigation.navigate('ChatList');
               }}
             />
             <DrawerItem

@@ -13,9 +13,6 @@ import {
 import OnboardingComponents from '../../components/Onboardings/OnboardingComponents';
 import CustomButtonhere from '../../components/Button/CustomButton';
 
-/////////////////images//////////
-import image from '../../assets/images/RideBook.png';
-
 ////////////height and width///////////
 import {
   heightPercentageToDP as hp,

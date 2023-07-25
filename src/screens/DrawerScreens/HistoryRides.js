@@ -97,7 +97,7 @@ const HistoryRides = ({navigation}) => {
           paddingHorizontal: wp(5),
           flexDirection: 'row',
           marginVertical: hp(2),
-          marginTop: hp(4),
+          marginTop: hp(1),
         }}>
         <TouchableOpacity
           style={{width: wp(30)}}

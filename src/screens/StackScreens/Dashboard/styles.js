@@ -82,20 +82,18 @@ const styles = StyleSheet.create({
   /////////////////ongoing///////////////
   username:{
     color:"black",
-    fontSize:hp(1.6),
-    fontWeight:"700",
+    fontSize:hp(1.9),
     fontFamily:fontFamily.Nunito_Bold
 
   },
   numberplate:{
     color:"#8E8D8A",
-    fontSize:hp(1.5),
-    fontWeight:"400",
-    fontFamily:fontFamily.Nunito_Light
+    fontSize:hp(1.7),
+    fontFamily:fontFamily.Nunito_SemiBold
   },
   line: {
     width: wp(0.2),
-    height: hp(5),
+    height: hp(5.2),
     backgroundColor: 'rgba(0, 0, 0, 0.21)',
   },
 });

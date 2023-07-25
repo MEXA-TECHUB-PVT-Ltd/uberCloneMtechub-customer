@@ -7,6 +7,7 @@ import {DrawerContent} from './CustomDrawer';
 /////////////drawer screens////////
 import DashboardNav from '../DashboardNav/DashboardNav';
 import MyWallet from '../../screens/DrawerScreens/MyWallet';
+import ChatList from '../../screens/DrawerScreens/Chat/ChatList';
 import History from '../HistoryNav/HistoryNav';
 import UpdateProfile from '../../screens/DrawerScreens/UpdateProfile';
 import UpdatePassword from '../../screens/DrawerScreens/UpdatePassword';
@@ -29,6 +30,13 @@ export default function Drawerroute() {
         }}
         name="MyWallet"
         component={MyWallet}
+      />
+      <Drawer.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="ChatList"
+        component={ChatList}
       />
       <Drawer.Screen
         options={{

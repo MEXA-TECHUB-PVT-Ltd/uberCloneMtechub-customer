@@ -16,39 +16,43 @@ import {fontFamily} from '../../constants/fonts';
 const styles = StyleSheet.create({
   mainview: {
     flexDirection: 'row',
-    marginTop: wp(5),
+    marginTop: wp(3),
     marginBottom: wp(2),
-    width: wp(88),
+    width: wp(90),
     //height: wp(18),
     alignSelf: 'center',
-    borderRadius: wp(3),
-    paddingVertical: hp(1),
+    borderRadius: wp(4),
+    padding: hp(1),
     paddingLeft: wp(2),
     borderColor: '#F2F2F2',
     borderWidth: wp(0.3),
-    // borderWidth: wp(0.3),
+ 
   },
   logo: {
     height: wp(16),
-    width: wp(15),
+    width: wp(14),
+    marginLeft:wp(1),
+    marginRight:wp(1)
   },
 
   notimaintext: {
     color: 'black',
     fontFamily: fontFamily.Nunito_Bold,
     fontSize: hp(1.8),
-    //fontWeight: '700',
+    width:wp(50)
   },
   notisubtext: {
     color: '#7A7C87',
-    fontFamily: fontFamily.Nunito_Regular,
-    fontSize: hp(1.5),
-    //fontWeight: '400',
+    fontFamily: fontFamily.Nunito_SemiBold,
+    fontSize: hp(1.8),
+    marginTop:hp(1),
+    width:wp(60)
   },
   notitimetext: {
     color: '#979797',
     fontFamily: fontFamily.Nunito_SemiBold,
     fontSize: hp(1.3),
+    marginTop:hp(0.7)
   },
   lineview: {
     width: wp(90),

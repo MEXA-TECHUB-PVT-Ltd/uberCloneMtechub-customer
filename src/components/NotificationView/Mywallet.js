@@ -57,7 +57,7 @@ const MyWalletCard = ({
             <Text style={styles.notisubtext}>{notisubtext}</Text>
           </View>
         </View>
-        <Text style={[styles.notimaintext,{fontFamily:fontFamily.Nunito_SemiBold}]}>{notitime}</Text>
+        <Text style={[styles.notimaintext,{fontFamily:fontFamily.Nunito_Bold}]}>{notitime}</Text>
       </TouchableOpacity>
     </View>
   );

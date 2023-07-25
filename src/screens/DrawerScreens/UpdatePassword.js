@@ -59,12 +59,12 @@ const UpdatePassword = ({navigation}) => {
         }}
         icon={'chevron-back'}
       />
+      <View style={{height:hp(50)}}>
       <CustomTextInput
         type={'withouticoninput'}
         term={oldpassword}
         view_widthset={85}
         textinput_widthset={67}
-        placeholder="Password"
         onTermChange={newPassword => setOldPassword(newPassword)}
         mode={'password'}
         secureTextEntry={data.secureTextEntry ? true : false}
@@ -78,7 +78,6 @@ const UpdatePassword = ({navigation}) => {
         term={newpassword}
         view_widthset={85}
         textinput_widthset={67}
-        placeholder="Password"
         onTermChange={newPassword => setNewPassword(newPassword)}
         mode={'password'}
         secureTextEntry={data.secureTextEntry ? true : false}
@@ -91,7 +90,6 @@ const UpdatePassword = ({navigation}) => {
         term={confirmpassword}
         view_widthset={85}
         textinput_widthset={67}
-        placeholder="Password"
         onTermChange={newPassword => setConfirmPassword(newPassword)}
         mode={'password'}
         secureTextEntry={data.secureTextEntry ? true : false}
@@ -99,15 +97,17 @@ const UpdatePassword = ({navigation}) => {
         PlaceholderText={'Confirm Password'}
         focus={"true"}
       />
+      </View>
+
 
 <CustomButtonhere
-        title={'Sign In'}
+        title={'Update'}
         widthset={80}
         topDistance={25}
         // loading={loading}
         // disabled={disable}
         onPress={() => {
-          navigation.navigate('WelcomeScreen');
+          navigation.goBack();
         }}
       />
     </SafeAreaView>

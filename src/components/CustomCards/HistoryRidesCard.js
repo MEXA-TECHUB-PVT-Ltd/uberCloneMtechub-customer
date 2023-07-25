@@ -91,7 +91,7 @@ const HistoryRidesCard = ({
                   style={{
                     flexDirection: 'row',
                     marginTop: hp(0),
-                    width: wp(70),
+                    width: wp(68),
                     alignItems: 'center',
                   }}>
                   {/* <Image
@@ -100,7 +100,7 @@ const HistoryRidesCard = ({
                   resizeMode="contain"
                 /> */}
                   <Avatar.Icon
-                    size={hp(7)}
+                    size={hp(5.5)}
                     style={{backgroundColor: '#E7E7E7'}}
                     //source={appImages.GoogleLogo}
                   />
@@ -109,7 +109,7 @@ const HistoryRidesCard = ({
                     <Text style={styles.notisubtext}>{notisubtext}</Text>
                   </View>
                 </View>
-                <View>
+                <View style={{marginRight:wp(3)}}>
                   <Text style={[styles.pricetext]}>{notitime}</Text>
                   <Text style={[styles.kmtext]}>{km}</Text>
                 </View>

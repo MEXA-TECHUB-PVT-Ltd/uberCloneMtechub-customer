@@ -247,7 +247,7 @@ const SearchLocation = ({navigation, route}) => {
                 marginTop: hp(5),
                 marginBottom:hp(1)
               }}>
-              <View
+              <TouchableOpacity
                 style={{
                   backgroundColor: Colors.Appthemecolor,
                   width: wp(43),
@@ -256,10 +256,14 @@ const SearchLocation = ({navigation, route}) => {
                   alignItems: 'center',
                   justifyContent: 'center',
 
-                }}>
+                }}
+                onPress={() => {
+                   navigation.navigate('Dashboard');
+                }}
+                >
                 <Text style={styles.btntext}>Set as pickup Location</Text>
-              </View>
-              <View
+              </TouchableOpacity>
+              <TouchableOpacity
                 style={{
                   backgroundColor: Colors.Appthemecolor,
                   width: wp(43),
@@ -267,9 +271,12 @@ const SearchLocation = ({navigation, route}) => {
                   borderRadius: wp(3),
                   alignItems: 'center',
                   justifyContent: 'center',
-                }}>
+                }}
+                onPress={() => {
+                  navigation.navigate('Dashboard');
+               }}>
                 <Text style={styles.btntext}>Set as dropoff Location</Text>
-              </View>
+              </TouchableOpacity>
             </View>
           </View>
         </View>

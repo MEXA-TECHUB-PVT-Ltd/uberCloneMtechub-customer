@@ -64,7 +64,7 @@ const RidesDetail = ({navigation, route}) => {
         />
       </View>
       <Text style={styles.maintext}>Payment Details</Text>
-      <View style={{marginTop: hp(3)}}>
+      <View style={{marginTop: hp(3),marginLeft:wp(2)}}>
         <View style={styles.horizontalview}>
           <Text style={styles.lefttext}>Trip Expense</Text>
           <Text style={styles.righttext}>$9,00</Text>
@@ -154,11 +154,11 @@ const RidesDetail = ({navigation, route}) => {
         refRBSheet={refRBSheet}
         onClose={() => refRBSheet.current.close()}
         title={'Report Driver'}
-        subtitle={'Enter Comment'}
+        subtitle={'Username'}
         btntext={'ADD'}
         onpress={() => {
           {
-            doSomethingCallback();
+            refRBSheet.current.close()
           }
         }}
       />
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
     color: '#000',
     fontSize: hp(2),
     fontFamily: fontFamily.Nunito_Bold,
-    marginLeft: wp(4),
+    marginLeft: wp(6),
   },
   horizontalview: {
     flexDirection: 'row',
@@ -202,9 +202,9 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.Nunito_Bold,
   },
   righttext: {
-    color: '#000',
+    color: '#585858',
     fontSize: hp(1.6),
-    fontFamily: fontFamily.Nunito_Light,
+    fontFamily: fontFamily.Nunito_SemiBold,
     textAlign: 'right',
   },
   itemview: {
