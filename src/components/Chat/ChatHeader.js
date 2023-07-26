@@ -63,7 +63,7 @@ const ChatHeader = ({
         <TouchableOpacity style={styles.profile}>
           <View>
             <Avatar.Icon
-              size={hp(9)}
+              size={hp(6.5)}
               style={{backgroundColor: '#E7E7E7'}}
               //source={appImages.GoogleLogo}
             />
@@ -71,7 +71,7 @@ const ChatHeader = ({
           <View style={styles.usernameAndOnlineStatus}>
             <Text style={styles.username}>{username}</Text>
             <View style={{flexDirection: 'row',alignItems:"center"}}>
-              <ActiveDot width={wp(4)} height={hp(6)} />
+              <ActiveDot width={wp(2.5)} height={hp(3)} />
               <Text style={styles.onlineStatus}>{"Active Now"}</Text>
             </View>
           </View>
@@ -86,10 +86,10 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     backgroundColor: Colors.Appthemecolor,
-    height: Height * 0.18,
+    height: Height * 0.12,
     width: wp(100),
     alignItems:'center',
-    paddingTop:hp(5)
+    paddingTop:hp(0)
     },
   backButton: {
     alignSelf: 'center',
@@ -120,12 +120,13 @@ const styles = StyleSheet.create({
   usernameAndOnlineStatus: {
     flexDirection: 'column',
     justifyContent: 'center',
-    paddingHorizontal: wp(2),
+    paddingHorizontal: wp(3),
   },
   username: {
     color: '#000000',
-    fontSize: hp(2.2),
+    fontSize: hp(2),
     fontFamily: fontFamily.Nunito_Bold,
+    marginLeft:wp(1)
   },
   onlineStatus: {
     color: '#343937',

@@ -25,7 +25,6 @@ const CustomHeader = ({
   type,
   searchicon,
 }) => {
-  console.log("hree props",searchicon)
   return (
     <View style={[styles.headerView]}>
       <View style={styles.lefticonview}>

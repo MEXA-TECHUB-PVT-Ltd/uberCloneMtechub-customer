@@ -33,68 +33,6 @@ const ChatList = ({navigation}) => {
   /////////navigation variable/////////////
   const isFocused = useIsFocused();
 
-  ///////////////Modal States///////////////
-  const [modalVisible, setModalVisible] = useState(false);
-
-  const [friendList, setFriendList] = useState([]);
-
-  const user=async()=>{
-    var user_id = "1_drivers"
-    //await AsyncStorage.getItem('User_id');
-   firestore()
-    .collection('users')
-    .doc('user_' + user_id)
-    .onSnapshot(snapshot => {
-      if (snapshot.exists) {
-        const userData = snapshot.data();
-        const userFriendList = userData.friends || [];
-        setFriendList(userFriendList);
-      }
-    });
-  }
-
-  useEffect( () => {
-    user()
-    console.log('friend list here', friendList,"..............");
-    startChatWithUser()
-    // return () => {
-    //   unsubscribe();
-    // };
-  }, []);
-  
-  const startChatWithUser = async () => {
- 
-    var user_id = "1_drivers"
-    var Item_userid= "2_drivers"
-    // await AsyncStorage.getItem('User_id');
-    //const isFriend = friendList.includes(Item_userid);
-    const isFriend = friendList.some((friend) => friend.id === Item_userid);
-    console.log('Chat other user.', isFriend, Item_userid,"........");
-    if (isFriend) {
-      // Start the chat with the other user
-      console.log('Chat started with the other user.');
-      navigation.navigate('ChatScreen', {
-        navtype: 'chatlist',
-        userid: Item_userid,
-      });
-    } else {
-      await firestore().collection('users').doc('user_'+ user_id)
-        .update({friends:firestore.FieldValue.arrayUnion({ id: Item_userid, user_name: "username", user_image: "tt" })})
-        .then(() => {
-          console.log('Other user added to the friend list.');
-          navigation.navigate('ChatScreen', {
-            navtype: 'chatlist',
-            userid: Item_userid,
-          });
-          // Start the chat with the other user
-          console.log('Chat started with the other user.');
-        })
-        .catch(error => {
-          console.log('Error adding other user to the friend list:', error);
-        });
-    }
-  };
-
   ///////////////////flatlist render item///////////////
   const renderitem = ({item}) => {
     return (
@@ -107,7 +45,7 @@ const ChatList = ({navigation}) => {
           onPress={() => {
             navigation.navigate('ChatScreen', {
               navtype: 'chatlist',
-              userid: item.id,
+              userid:"driver_1",
             });
           }}>
           <View

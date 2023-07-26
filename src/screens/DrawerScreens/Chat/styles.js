@@ -9,7 +9,7 @@ import {
 import Colors from '../../../utils/Colors';
 
 ////////////////app fonts///////////
-import { fontFamily } from '../../../constants/fonts';
+import {fontFamily} from '../../../constants/fonts';
 
 const styles = StyleSheet.create({
   container: {
@@ -72,7 +72,6 @@ const styles = StyleSheet.create({
     fontSize: 10,
   },
 
-
   ///////////////////Chatlist////////////
 
   card: {
@@ -103,14 +102,90 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.Nunito_Medium,
     color: '#343937',
     textAlign: 'right',
-    marginTop:hp(1)
+    marginTop: hp(1),
   },
   line: {
     borderBottomColor: '#F1F2F6',
-    borderBottomWidth:wp(0.3),                                
-    width:wp(71),
-    marginLeft:wp(23)
+    borderBottomWidth: wp(0.3),
+    width: wp(71),
+    marginLeft: wp(23),
     //alignSelf:'flex-end'
+  },
+
+  /////////////////chat bubble/////////
+  bubblecontainer: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    marginHorizontal: wp(0.5),
+    marginVertical: hp(0.1),
+  },
+  containerCurrentUser: {
+    justifyContent: 'flex-end',
+  },
+  avatar: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    marginRight: 8,
+  },
+  messageContainer: {
+    flex: 1,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    marginLeft: 8,
+    maxWidth: '80%', // Adjust this to limit the message width as per your design
+    borderRadius: 16,
+    position: 'relative',
+  },
+  messageText: {
+    fontSize: 16,
+    color: '#fff',
+  },
+  timeContainer: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    marginLeft: 8,
+  },
+  timeText: {
+    fontSize: 12,
+    color: '#aaa',
+    textAlign: 'center',
+  },
+  leftBubble: {
+    backgroundColor: '#F4F8FC',
+  },
+  rightBubble: {
+    backgroundColor: Colors.Appthemecolor,
+  },
+  triangleLeft: {
+    position: 'absolute',
+    left: -8,
+    bottom: -8,
+    width: 0,
+    height: 0,
+    borderTopWidth: 8,
+    borderTopColor: 'transparent',
+    borderRightWidth: 8,
+    borderRightColor: '#F4F8FC',
+    borderBottomWidth: 8,
+    borderBottomColor: 'transparent',
+    borderLeftWidth: 8,
+    borderLeftColor: 'transparent',
+  },
+  triangleRight: {
+    position: 'absolute',
+    right: -8,
+    bottom: -8,
+    width: 0,
+    height: 0,
+    borderTopWidth: 8,
+    borderTopColor: 'transparent',
+    borderLeftWidth: 8,
+    borderLeftColor: Colors.Appthemecolor,
+    borderBottomWidth: 8,
+    borderBottomColor: 'transparent',
+    borderRightWidth: 8,
+    borderRightColor: 'transparent',
   },
 });
 export default styles;
