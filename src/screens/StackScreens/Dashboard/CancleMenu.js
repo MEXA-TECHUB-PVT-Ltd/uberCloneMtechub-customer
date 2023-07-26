@@ -72,12 +72,7 @@ const CancleMenu = ({navigation}) => {
         </Text>
         <View>
       {checkboxes.map((checkbox, index) => (
-        // <Checkbox
-        //   key={index}
-        //   label={checkbox.label}
-        //   checked={checkedIndex === index}
-        //   onPress={() => handleCheckboxPress(index)}
-        // />
+
         <View style={styles.checkview}>
         {/* <CheckIcon width={wp(6)} height={hp(5)} /> */}
         <Checkbox

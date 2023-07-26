@@ -13,7 +13,7 @@ import CancleMenu from '../../screens/StackScreens/Dashboard/CancleMenu';
 import Review from '../../screens/StackScreens/Dashboard/ReviewCancleRide';
 
 //////////////chat screen///////////
-//import ChatScreen from '../../screens/DrawerScreens/Chat/ChatScreen';
+import ChatScreen from '../../screens/DrawerScreens/Chat/ChatScreen';
 
 const Stack = createNativeStackNavigator();
 function DashboardNav() {
@@ -68,13 +68,13 @@ function DashboardNav() {
           headerShown: false,
         }}
       />
-      {/* <Stack.Screen
+      <Stack.Screen
         name="ChatScreen"
         component={ChatScreen}
         options={{
           headerShown: false,
         }}
-      /> */}
+      />
     </Stack.Navigator>
   );
 }

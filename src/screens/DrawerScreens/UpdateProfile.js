@@ -117,7 +117,7 @@ const UpdateProfile = ({navigation}) => {
         focus={'true'}
       />
       <CustomTextInput
-        type={'withouticoninput'}
+        type={'withouticoninput'} 
         term={email}
         view_widthset={85}
         textinput_widthset={67}

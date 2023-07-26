@@ -103,7 +103,7 @@ const HistoryRidesCard = ({
                     size={hp(5.5)}
                     style={{backgroundColor: '#E7E7E7'}}
                     //source={appImages.GoogleLogo}
-                  />
+                  /> 
                   <View style={{marginLeft: wp(3), justifyContent: 'center'}}>
                     <Text style={styles.notimaintext}>{notitext}</Text>
                     <Text style={styles.notisubtext}>{notisubtext}</Text>
