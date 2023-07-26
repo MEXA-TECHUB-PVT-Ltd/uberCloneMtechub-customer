@@ -31,7 +31,7 @@ const DescriptionBottomSheet = props => {
 
   ////////////////textinput state//////////////
   const [description, setDescription] = useState('');
-  const [data, setData] = useState({});
+  const [data, setData] = useState({}); 
 
   ///////////////button states/////////////
   const [loading, setloading] = useState(0);

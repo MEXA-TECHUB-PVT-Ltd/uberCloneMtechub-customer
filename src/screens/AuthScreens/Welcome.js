@@ -55,7 +55,7 @@ const WelcomeScreen = ({navigation}) => {
         // loading={loading}
         // disabled={disable}
         onPress={() => {
-          navigation.navigate('Login');
+          navigation.navigate('CreateAccount');
         }}
       />
       <CustomButtonhere

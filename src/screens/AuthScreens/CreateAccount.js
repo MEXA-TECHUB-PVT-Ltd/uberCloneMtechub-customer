@@ -62,7 +62,7 @@ const CreateAccount = ({navigation}) => {
             name="chevron-back"
             color={'#000'}
             size={hp(3.5)}
-            onPress={{}}
+               onPress={()=>navigation.goBack()}
           />
         </View>
         <View
