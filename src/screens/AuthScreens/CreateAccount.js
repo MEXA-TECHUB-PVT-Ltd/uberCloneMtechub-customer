@@ -34,6 +34,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Authstyles from '../styles/Authstyles';
 import {fontFamily} from '../../constants/fonts';
 
+//////////////////firebase////////////////
+import firestore from '@react-native-firebase/firestore';
+
 const CreateAccount = ({navigation}) => {
   ///////////////data states////////////////////
   const [email, setEmail] = React.useState('');
@@ -52,6 +55,22 @@ const CreateAccount = ({navigation}) => {
       secureTextEntry: !data.secureTextEntry,
     });
   };
+
+  ////////////firebase store function/////////////////
+  const firebase_store_user = async(props) => {
+    try {
+      await firestore().collection('users').doc("customer_doc").set({
+        id: "customer_1",
+        phoneNo: "00000000",
+        //country_code: predata.country_code,
+        friends: [],
+      });
+      console.log('User created successfully!');
+    } catch (error) {
+      console.error('Error creating user:', error);
+    }
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
@@ -82,7 +101,6 @@ const CreateAccount = ({navigation}) => {
           </Text>
         </View>
         <CustomTextInput
-          icon={appImages.lock}
           type={'withouticoninput'}
           term={password}
           view_widthset={85}
@@ -94,7 +112,6 @@ const CreateAccount = ({navigation}) => {
           PlaceholderText={'Phone Number*'}
         />
         <CustomTextInput
-          icon={appImages.lock}
           type={'withouticoninput'}
           term={password}
           view_widthset={85}
@@ -106,7 +123,6 @@ const CreateAccount = ({navigation}) => {
           PlaceholderText={'Password*'}
         />
         <CustomTextInput
-          icon={appImages.lock}
           type={'withouticoninput'}
           term={password}
           view_widthset={85}
@@ -124,7 +140,9 @@ const CreateAccount = ({navigation}) => {
           // loading={loading}
           // disabled={disable}
           onPress={() => {
-            navigation.navigate('Verification',{navplace:'CreateAccount'});
+            firebase_store_user()
+            navigation.navigate('Drawerroute');
+            //navigation.navigate('Verification',{navplace:'CreateAccount'});
           }}
         />
         <View

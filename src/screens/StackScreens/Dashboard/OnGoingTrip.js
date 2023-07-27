@@ -53,6 +53,9 @@ import {
   locationPermission,
 } from '../../../api/CurrentLocation';
 
+//////////////////firebase////////////////
+import firestore from '@react-native-firebase/firestore';
+
 /////////////map variables////////////////
 const screen = Dimensions.get('window');
 const ASPECT_RATIO = screen.width / screen.height;
@@ -158,6 +161,68 @@ const OnGoingTrip = ({navigation, route}) => {
     }
   };
 
+  ///////////////chat functions with firebase
+  const [friendList, setFriendList] = useState([]);
+
+  const user = async () => {
+    var user_id = '1_drivers';
+    //await AsyncStorage.getItem('User_id');
+    firestore()
+      .collection('users')
+      .doc('customer_doc')
+      .onSnapshot(snapshot => {
+        if (snapshot.exists) {
+          const userData = snapshot.data();
+          const userFriendList = userData.friends || [];
+          setFriendList(userFriendList);
+        }
+      });
+  };
+
+  useEffect(() => {
+    user();
+  }, []);
+
+  const startChatWithUser = async () => {
+    var user_id = '1_drivers';
+    var Item_userid = "driver_1";
+    // await AsyncStorage.getItem('User_id');
+    //const isFriend = friendList.includes(Item_userid);
+    const isFriend = friendList.some(friend => friend.id === Item_userid);
+    console.log('Chat other user.', isFriend, Item_userid, '........');
+    if (isFriend) {
+      // Start the chat with the other user
+      console.log('Chat started with the other user.');
+      navigation.navigate('ChatScreen', {
+        navtype: 'chatlist',
+        userid: Item_userid,
+      });
+    } else {
+      await firestore()
+        .collection('users')
+        .doc('customer_doc')
+        .update({
+          friends: firestore.FieldValue.arrayUnion({
+            id: Item_userid,
+            user_name: 'username',
+            user_image: 'tt',
+          }),
+        })
+        .then(() => {
+          console.log('Other user added to the friend list.');
+          navigation.navigate('ChatScreen', {
+            navtype: 'chatlist',
+            userid: Item_userid,
+          });
+          // Start the chat with the other user
+          console.log('Chat started with the other user.');
+        })
+        .catch(error => {
+          console.log('Error adding other user to the friend list:', error);
+        });
+    }
+  };
+
   return (
     <SafeAreaView style={styles.container1}>
       <ScrollView
@@ -172,7 +237,7 @@ const OnGoingTrip = ({navigation, route}) => {
               navigation.goBack();
             }}
             icon={'chevron-back'}
-            searchicon={<Cancle width={wp(18)} height={hp(6)}/>}
+            searchicon={<Cancle width={wp(18)} height={hp(6)} />}
             onpresseacrh={() => {
               navigation.navigate('CancleMenu');
             }}
@@ -311,7 +376,12 @@ const OnGoingTrip = ({navigation, route}) => {
                   </View>
                 </View>
                 <Call width={wp(10)} height={hp(5)} />
-                <Chat width={wp(10)} height={hp(5)} />
+                <TouchableOpacity
+                  onPress={() => {
+                    startChatWithUser();
+                  }}>
+                  <Chat width={wp(10)} height={hp(5)} />
+                </TouchableOpacity>
               </View>
               <View
                 style={{
