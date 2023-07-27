@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "326756983865-iti8oli9avsrmn765jiafvqubn1fvgon.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.uberclonemtechub",
+            "certificate_hash": "83bb978330ba9e98692c5eb78b13a2494c5d7dd0"
+          }
+        },
+        {
           "client_id": "326756983865-dicmchlbgb0in955aevgrvi2p34tiklk.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -48,6 +56,14 @@
           "android_info": {
             "package_name": "com.uberclonemtechubrider",
             "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "326756983865-oojcicll0dv7fp2kku14n32ll3opr4lh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.uberclonemtechubrider",
+            "certificate_hash": "b49e9d1dd4ba5d2b725aa2d53c6fe1efaced61c1"
           }
         },
         {
