@@ -1,7 +1,5 @@
 import React, {useEffect, useState, useRef} from 'react';
 import {
-  SafeAreaView,
-  ImageBackground,
   Dimensions,
   View,
   Text,
@@ -10,14 +8,9 @@ import {
   ScrollView,
 } from 'react-native';
 
-//////app icons////////////////
-import Ionicons from 'react-native-vector-icons/Ionicons';
-
 ///////////////////app components////////////
 import CustomButtonhere from '../../../components/Button/CustomButton';
 import CustomTextInput from '../../../components/TextInput/CustomTextInput';
-import SelectMenu from '../../../components/SelectMenu/SelectMenu';
-import VerticalLine from '../../../components/VerticleLine/VerticleLine';
 
 ////////app styles///////////////////
 //import styles from './styles';
@@ -63,6 +56,9 @@ import UserLocatin_marker from '../../../assets/svgs/UserLocation.svg';
 import Location from '../../../assets/svgs/SelectedLocation_icon.svg';
 
 const SearchLocation = ({navigation, route}) => {
+  /////////previous data////
+  const [predata] = useState(route.params);
+
   //////////////menu states//////////
   const [bike, setBike] = useState(true);
   const [car, setCar] = useState(false);
@@ -144,8 +140,7 @@ const SearchLocation = ({navigation, route}) => {
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
-      showsHorizontalScrollIndicator={false}
-      >
+      showsHorizontalScrollIndicator={false}>
       <View style={[styles.container]}>
         {0 === 0 ? (
           <MapView
@@ -198,10 +193,10 @@ const SearchLocation = ({navigation, route}) => {
               alignItems: 'center',
               //backgroundColor:'red'
             }}>
-                <TouchableOpacity onPress={() => navigation.goBack()}>
-                <LeftIcon width={wp(5)} height={hp(5)} />
-                </TouchableOpacity>
-    
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <LeftIcon width={wp(5)} height={hp(5)} />
+            </TouchableOpacity>
+
             <Text style={styles.toptext}>Lorem ipsum lorem ipsum</Text>
           </View>
 
@@ -218,7 +213,7 @@ const SearchLocation = ({navigation, route}) => {
               borderTopRightRadius: wp(8),
               paddingHorizontal: wp(5),
             }}>
-            <Text style={styles.bottommaintext}>Location</Text>
+            <Text style={[styles.bottommaintext,{marginBottom:hp(5)}]}>Location</Text>
             <View
               style={{
                 flexDirection: 'row',
@@ -238,46 +233,56 @@ const SearchLocation = ({navigation, route}) => {
                 />
               </View>
             </View>
-
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                marginTop: hp(5),
-                marginBottom:hp(1)
-              }}>
-              <TouchableOpacity
+            {predata.navplace != 'ongoingTrip' ? (
+              <View
                 style={{
-                  backgroundColor: Colors.Appthemecolor,
-                  width: wp(43),
-                  height: hp(6),
-                  borderRadius: wp(3),
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
                   alignItems: 'center',
-                  justifyContent: 'center',
-
-                }}
+                  marginTop: hp(5),
+                  marginBottom: hp(1),
+                }}>
+                <TouchableOpacity
+                  style={{
+                    backgroundColor: Colors.Appthemecolor,
+                    width: wp(43),
+                    height: hp(6),
+                    borderRadius: wp(3),
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                  onPress={() => {
+                    navigation.navigate('Dashboard');
+                  }}>
+                  <Text style={styles.btntext}>Set as pickup Location</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={{
+                    backgroundColor: Colors.Appthemecolor,
+                    width: wp(43),
+                    height: hp(6),
+                    borderRadius: wp(3),
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                  onPress={() => {
+                    navigation.navigate('Dashboard');
+                  }}>
+                  <Text style={styles.btntext}>Set as dropoff Location</Text>
+                </TouchableOpacity>
+              </View>
+            ) : (
+              <CustomButtonhere
+                title={'Add location'}
+                widthset={80}
+                topDistance={3}
+                // loading={loading}
+                // disabled={disable}
                 onPress={() => {
-                   navigation.navigate('Dashboard');
+                navigation.navigate('OnGoingTrip',{navplace:"search_location",newdata:"here"});
                 }}
-                >
-                <Text style={styles.btntext}>Set as pickup Location</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={{
-                  backgroundColor: Colors.Appthemecolor,
-                  width: wp(43),
-                  height: hp(6),
-                  borderRadius: wp(3),
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-                onPress={() => {
-                  navigation.navigate('Dashboard');
-               }}>
-                <Text style={styles.btntext}>Set as dropoff Location</Text>
-              </TouchableOpacity>
-            </View>
+              />
+            )}
           </View>
         </View>
       </View>

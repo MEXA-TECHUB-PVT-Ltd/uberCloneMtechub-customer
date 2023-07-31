@@ -1,17 +1,11 @@
 import React, {useEffect, useState, useRef} from 'react';
 import {
-  SafeAreaView,
-  ImageBackground,
   Dimensions,
   View,
   Text,
   TouchableOpacity,
-  Image,
   ScrollView,
 } from 'react-native';
-
-//////app icons////////////////
-import Ionicons from 'react-native-vector-icons/Ionicons';
 
 ///////////////////app components////////////
 import CustomTextInput from '../../components/TextInput/CustomTextInput';
@@ -21,9 +15,6 @@ import VerticalLine from '../../components/VerticleLine/VerticleLine';
 
 ////////app styles///////////////////
 import styles from '../BottomTabScreens/styles';
-
-////////colors/////////
-import Colors from '../../utils/Colors';
 
 ////height and width///////////////////
 import {
@@ -48,9 +39,6 @@ import {
   getCurrentLocation,
   locationPermission,
 } from '../../api/CurrentLocation';
-
-///////////////////app images//////////////
-import {appImages} from '../../constants/images';
 
 /////////////map variables////////////////
 const screen = Dimensions.get('window');
@@ -218,7 +206,7 @@ const Dashboard = ({navigation, route}) => {
             <Menu_Icon width={wp(5)} height={hp(6)} />
           </TouchableOpacity>
           <View style={{flexDirection: 'row'}}>
-          <TouchableOpacity onPress={() => navigation.navigate('SearchLocation')}>
+          <TouchableOpacity onPress={() => navigation.navigate('SearchLocation',{navplace:'dashboard'})}>
             <Search width={wp(15)} height={hp(6)} />
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Notification')}>
@@ -284,7 +272,7 @@ const Dashboard = ({navigation, route}) => {
                 <VerticalLine />
                 <LocationIcon width={wp(8)} height={hp(6)} />
               </View>
-              <View style={{}}>
+              <View style={{marginTop:hp(3)}}>
                 <CustomTextInput
                   type={'iconinput'}
                   // term={email}
@@ -293,6 +281,7 @@ const Dashboard = ({navigation, route}) => {
                   textinput_widthset={68}
                   // onTermChange={newPassword => setPassword(newPassword)}
                 />
+                <View style={{height:hp(3)}}></View>
                 <CustomTextInput
                   type={'iconinput'}
                   // term={email}

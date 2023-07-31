@@ -21,9 +21,6 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
 
-/////////colors////////////
-import Colors from '../../utils/Colors';
-
 ///app images////////////
 import {appImages} from '../../constants/images';
 
@@ -37,10 +34,16 @@ import {fontFamily} from '../../constants/fonts';
 //////////////////firebase////////////////
 import firestore from '@react-native-firebase/firestore';
 
-const CreateAccount = ({navigation}) => {
+const CreateAccount = ({navigation,route}) => {
+
+  ////////previous data///////////
+  const [predata]=useState(route.params)
+
   ///////////////data states////////////////////
   const [email, setEmail] = React.useState('');
+  const [phone, setPhone] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [confirm_password, setConfirmPassword] = React.useState('');
 
   //password eye function and states
   const [data, setData] = React.useState({
@@ -100,23 +103,31 @@ const CreateAccount = ({navigation}) => {
             information below to begin your seamless journey with us.
           </Text>
         </View>
+     {   predata.navplace === 'phone'?
         <CustomTextInput
           type={'withouticoninput'}
-          term={password}
+          term={phone}
           view_widthset={85}
           textinput_widthset={75}
-          onTermChange={newPassword => setPassword(newPassword)}
-          // mode={'password'}
-          secureTextEntry={data.secureTextEntry ? true : false}
-          onclick={() => updateSecureTextEntry()}
+          onTermChange={text => setPhone(text)}
           PlaceholderText={'Phone Number*'}
+          keyboard_type={'numeric'}
         />
+        :
+        <CustomTextInput
+          type={'withouticoninput'}
+          term={email}
+          view_widthset={85}
+          textinput_widthset={75}
+          onTermChange={text => setEmail(text)}
+          PlaceholderText={'Email Address*'}
+        />}
         <CustomTextInput
           type={'withouticoninput'}
           term={password}
           view_widthset={85}
           textinput_widthset={67}
-          onTermChange={newPassword => setPassword(newPassword)}
+          onTermChange={text => setPassword(text)}
           mode={'password'}
           secureTextEntry={data.secureTextEntry ? true : false}
           onclick={() => updateSecureTextEntry()}
@@ -124,10 +135,10 @@ const CreateAccount = ({navigation}) => {
         />
         <CustomTextInput
           type={'withouticoninput'}
-          term={password}
+          term={confirm_password}
           view_widthset={85}
           textinput_widthset={67}
-          onTermChange={newPassword => setPassword(newPassword)}
+          onTermChange={text => setConfirmPassword(text)}
           mode={'password'}
           secureTextEntry={data.secureTextEntry ? true : false}
           onclick={() => updateSecureTextEntry()}
@@ -141,8 +152,7 @@ const CreateAccount = ({navigation}) => {
           // disabled={disable}
           onPress={() => {
             firebase_store_user()
-            navigation.navigate('Drawerroute');
-            //navigation.navigate('Verification',{navplace:'CreateAccount'});
+            navigation.navigate('Verification',{navplace:'CreateAccount'});
           }}
         />
         <View
@@ -193,12 +203,18 @@ const CreateAccount = ({navigation}) => {
           //navigation.navigate('WelcomeScreen');
         }}
       />
-        <View style={{alignSelf: 'center', marginTop: hp(4),marginBottom:hp(3)}}>
+        <View style={{ flexDirection:'row' ,alignSelf: 'center', marginTop: hp(4),marginBottom:hp(3)}}>
           {/* Your other screen content */}
           <Text style={Authstyles.blacktext}>
             Already have an account?{' '}
-            <Text style={Authstyles.themecolortext}>Sign In</Text>
           </Text>
+          <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('Login');
+          }}
+          >
+          <Text style={Authstyles.themecolortext} >Sign In</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>

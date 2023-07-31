@@ -96,7 +96,11 @@ const ChangeLanguage = ({navigation}) => {
             navigation.goBack();
           }}
           icon={'chevron-back'}
-          searchicon={<Search width={wp(6)} height={hp(6)} />}
+          searchicon={
+          <View style={{marginLeft:wp(12)}}>
+             <Search width={wp(6)} height={hp(6)} />
+          </View>
+         }
           onpresseacrh={() => {
             setSearchEnable(true);
           }}

@@ -55,7 +55,7 @@ const WelcomeScreen = ({navigation}) => {
         // loading={loading}
         // disabled={disable}
         onPress={() => {
-          navigation.navigate('CreateAccount');
+          navigation.navigate('CreateAccount',{navplace:'phone'});
         }}
       />
       <CustomButtonhere
@@ -65,7 +65,7 @@ const WelcomeScreen = ({navigation}) => {
         // loading={loading}
         // disabled={disable}
         onPress={() => {
-          navigation.navigate('CreateAccount');
+          navigation.navigate('CreateAccount',{navplace:'email'});
         }}
       />
       <CustomButtonhere
@@ -78,14 +78,20 @@ const WelcomeScreen = ({navigation}) => {
           navigation.navigate('WelcomeScreen');
         }}
       />
-      <TouchableOpacity
-        style={{alignSelf: 'center', marginTop: hp(35)}}
+      <View
+        style={{ flexDirection:'row', alignSelf: 'center', marginTop: hp(35)}}
         onPress={() => navigation.navigate('Login')}>
         <Text style={Authstyles.blacktext}>
           Already have an account?{' '}
-          <Text style={Authstyles.themecolortext}>Sign In</Text>
         </Text>
-      </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('Login');
+          }}
+          >
+          <Text style={Authstyles.themecolortext} >Sign In</Text>
+          </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 };

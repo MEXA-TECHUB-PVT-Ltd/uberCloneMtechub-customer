@@ -2,9 +2,6 @@ import React, {useState, useEffect} from 'react';
 import {
   View,
   Text,
-  StyleSheet,
-  Dimensions,
-  Image,
   TouchableOpacity,
 } from 'react-native';
 
@@ -18,7 +15,7 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-import { Switch } from 'react-native-paper';
+import {Switch} from 'react-native-paper';
 import Colors from '../../utils/Colors';
 
 const SettingsMenu = ({navigation, label, labelPress, icon}) => {
@@ -26,27 +23,24 @@ const SettingsMenu = ({navigation, label, labelPress, icon}) => {
   const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
   return (
     <TouchableOpacity onPress={labelPress} style={styles.mainview}>
-      <View style={{flexDirection:'row'}}>
+      <View style={{flexDirection: 'row'}}>
         {icon}
-      {/* <Ionicons
-          name={icon}
-          color={'#242A37'}
-          size={22}
-          onPress={labelPress}
-        /> */}
         <Text style={styles.labeltext}>{label}</Text>
       </View>
-{label ==="Notifications"?
- <Switch value={isSwitchOn} onValueChange={onToggleSwitch} color={Colors.Appthemecolor}/>
-:
-<Ionicons
-name="chevron-forward"
-color={'#242A37'}
-size={hp(2.3)}
-onPress={labelPress}
-/>
-}
-
+      {label === 'Notifications' ? (
+        <Switch
+          value={isSwitchOn}
+          onValueChange={onToggleSwitch}
+          color={Colors.Appthemecolor}
+        />
+      ) : (
+        <Ionicons
+          name="chevron-forward"
+          color={'#242A37'}
+          size={hp(2.3)}
+          onPress={labelPress}
+        />
+      )}
     </TouchableOpacity>
   );
 };

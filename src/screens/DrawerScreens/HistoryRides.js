@@ -60,7 +60,7 @@ const HistoryRides = ({navigation}) => {
     return sent === true ? (
       <HistoryRidesCard
         notitext={' William Edward'}
-        notisubtext={'12/06/03:00 PM, 12/06/2023'}
+        notisubtext={'03:00 PM, 12/06/2023'}
         notitime={'$24,00'}
         km={'24 km'}
         cardPress={() => {
@@ -70,7 +70,7 @@ const HistoryRides = ({navigation}) => {
     ) : (
       <HistoryRidesCard
         notitext={' William Edward'}
-        notisubtext={'12/06/03:00 PM, 12/06/2023'}
+        notisubtext={'03:00 PM, 12/06/2023'}
         notitime={'$24,00'}
         km={'24 km'}
         cardPress={() => {

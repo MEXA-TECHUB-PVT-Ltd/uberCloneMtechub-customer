@@ -12,6 +12,8 @@ import History from '../HistoryNav/HistoryNav';
 import UpdateProfile from '../../screens/DrawerScreens/UpdateProfile';
 import UpdatePassword from '../../screens/DrawerScreens/UpdatePassword';
 
+import ProfileNav from '../ProfileNav/ProfileNav';
+
 const Drawer = createDrawerNavigator();
 
 export default function Drawerroute() {
@@ -23,6 +25,13 @@ export default function Drawerroute() {
         }}
         name="DashboardNav"
         component={DashboardNav}
+      />
+      <Drawer.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="ProfileNav"
+        component={ProfileNav}
       />
       <Drawer.Screen
         options={{

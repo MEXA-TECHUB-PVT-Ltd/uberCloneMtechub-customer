@@ -20,9 +20,6 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
 
-/////////////////colors/////////////
-import Colors from '../../../utils/Colors';
-
 ///////app fonts//////////////
 import {fontFamily} from '../../../constants/fonts';
 
@@ -63,7 +60,7 @@ const InviteFriends = ({navigation}) => {
         // loading={loading}
         // disabled={disable}
         onPress={() => {
-          navigation.navigate('WelcomeScreen');
+          navigation.navigate('Profile');
         }}
       />
     </SafeAreaView>

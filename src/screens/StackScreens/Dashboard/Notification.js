@@ -1,15 +1,9 @@
 import React, {useEffect, useState, useRef} from 'react';
-import {SafeAreaView, FlatList, StatusBar, ScrollView} from 'react-native';
+import {SafeAreaView, FlatList, ScrollView} from 'react-native';
 
 //////////////////////app components///////////////
 import CustomHeader from '../../../components/Header/CustomHeader';
 import NotificationView from '../../../components/NotificationView/NotificationView';
-
-//////////////////height and width/////////////////////
-import {
-  heightPercentageToDP as hp,
-  widthPercentageToDP as wp,
-} from 'react-native-responsive-screen';
 
 /////////////////////app styles////////////
 import styles from './styles';

@@ -72,7 +72,7 @@ const Login = ({navigation}) => {
           name="chevron-back"
           color={'#000'}
           size={hp(3.5)}
-          onPress={()=>navigation.goBack()}
+          onPress={() => navigation.goBack()}
         />
       </View>
       <View
@@ -97,6 +97,7 @@ const Login = ({navigation}) => {
         textinput_widthset={75}
         onTermChange={text => setEmail(text)}
         PlaceholderText={'Phone Number*'}
+        keyboard_type={'numeric'}
       />
       <CustomTextInput
         type={'withouticoninput'}
@@ -129,7 +130,7 @@ const Login = ({navigation}) => {
                 setChecked(!checked);
               }}
               color={Colors.Appthemecolor}
-              uncheckedColor='#A7A9AC'
+              uncheckedColor="#A7A9AC"
             />
             <Text
               style={styles.remembermetext}
@@ -184,7 +185,7 @@ const Login = ({navigation}) => {
             style={{
               width: wp(30),
               textAlign: 'center',
-              color:'#939598',
+              color: '#939598',
               fontFamily: fontFamily.Nunito_SemiBold,
             }}>
             Or continue with
@@ -210,15 +211,20 @@ const Login = ({navigation}) => {
           //navigation.navigate('WelcomeScreen');
         }}
       />
-      <TouchableOpacity
-        style={{alignSelf: 'center', marginTop: hp(6)}}
-        onPress={() => navigation.navigate('CreateAccount')}>
+      <View
+        style={{flexDirection: 'row', alignSelf: 'center', marginTop: hp(6)}}
+        onPress={() =>
+          navigation.navigate('CreateAccount', {navplace: 'phone'})
+        }>
         {/* Your other screen content */}
-        <Text style={Authstyles.blacktext}>
-          Don’t have an account?{' '}
+        <Text style={Authstyles.blacktext}>Don’t have an account? </Text>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate('CreateAccount', {navplace: 'phone'})
+          }>
           <Text style={Authstyles.themecolortext}>Create Account</Text>
-        </Text>
-      </TouchableOpacity>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 };

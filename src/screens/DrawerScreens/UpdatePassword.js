@@ -1,9 +1,6 @@
 import React, {useEffect, useState, useRef} from 'react';
 import {
   SafeAreaView,
-  FlatList,
-  StatusBar,
-  ScrollView,
   View,
   Text,
   TouchableOpacity,
@@ -22,9 +19,6 @@ import {
 
 /////////////////////app styles////////////
 import styles from './styles';
-
-/////////////////colors/////////////
-import Colors from '../../utils/Colors';
 
 const UpdatePassword = ({navigation}) => {
   /////////////data states/////////////

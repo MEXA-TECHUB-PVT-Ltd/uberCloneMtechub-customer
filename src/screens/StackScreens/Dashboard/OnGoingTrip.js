@@ -10,16 +10,11 @@ import {
   ScrollView,
 } from 'react-native';
 
-//////app icons////////////////
-import Ionicons from 'react-native-vector-icons/Ionicons';
-
 ///////////////////app components////////////
 import CustomButtonhere from '../../../components/Button/CustomButton';
-import CustomTextInput from '../../../components/TextInput/CustomTextInput';
-import SelectMenu from '../../../components/SelectMenu/SelectMenu';
-import SearchTextInput from '../../../components/TextInput/SearchInput';
 import CustomHeader from '../../../components/Header/CustomHeader';
 import VerticalLine from '../../../components/VerticleLine/VerticleLine';
+import DestinationModal from '../../../components/Modal/DestinationModal';
 
 ////////app styles///////////////////
 import styles from './styles';
@@ -82,8 +77,16 @@ const pinsdata = [
 ];
 
 const OnGoingTrip = ({navigation, route}) => {
+
+  /////////////previous data/////////
+  const[predata]=useState(route.params)
+
+ ///////////////Modal States///////////////
+ const [modalVisible, setModalVisible] = useState(false);
+
   //////////////menu states//////////
   const [confirm_ride, setConfirmRide] = useState(false);
+  const [click_add, setClick_add] = useState(false);
   const [bike, setBike] = useState(true);
   const [car, setCar] = useState(false);
   const [van, setVan] = useState(false);
@@ -223,6 +226,11 @@ const OnGoingTrip = ({navigation, route}) => {
     }
   };
 
+  const openModal=()=>{
+    setModalVisible(true)
+}
+//const onPressHandler = click_add === true ?   setModalVisible(true): null;
+
   return (
     <SafeAreaView style={styles.container1}>
       <ScrollView
@@ -350,111 +358,252 @@ const OnGoingTrip = ({navigation, route}) => {
               marginBottom: hp(0),
               marginTop: hp(3),
             }}></View>
+{click_add === false?
+     <View 
+    style={[styles.lastView]}>
+      <View
+        style={{
+          backgroundColor: 'white',
+          height: hp(34),
+          paddingTop: hp(2),
+          width: wp(100),
+          borderTopLeftRadius: wp(8),
+          borderTopRightRadius: wp(8),
+          paddingHorizontal: wp(5),
+        }}>
+        <View
+          style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <Avatar.Icon
+              size={hp(6)}
+              color={'#DFDCD4'}
+              style={{backgroundColor: '#DFDCD4'}}
+            />
+            <View style={{width: wp(50), marginLeft: wp(3)}}>
+              <Text style={styles.username}>Norman Gordon</Text>
+              <Text style={styles.numberplate}>Plate No: 64213-T-2{predata.navplace}</Text>
+            </View>
+          </View>
+          <Call width={wp(10)} height={hp(5)} />
+          <TouchableOpacity
+            onPress={() => {
+              startChatWithUser();
+            }}>
+            <Chat width={wp(10)} height={hp(5)} />
+          </TouchableOpacity>
+        </View>
 
-          <View style={[styles.lastView]}>
-            <View
-              style={{
-                backgroundColor: 'white',
-                height: hp(33),
-                paddingTop: hp(2),
-                width: wp(100),
-                borderTopLeftRadius: wp(8),
-                borderTopRightRadius: wp(8),
-                paddingHorizontal: wp(5),
-              }}>
-              <View
-                style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                  <Avatar.Icon
-                    size={hp(6)}
-                    color={'#DFDCD4'}
-                    style={{backgroundColor: '#DFDCD4'}}
-                  />
-                  <View style={{width: wp(50), marginLeft: wp(3)}}>
-                    <Text style={styles.username}>Norman Gordon</Text>
-                    <Text style={styles.numberplate}>Plate No: 64213-T-2</Text>
-                  </View>
-                </View>
-                <Call width={wp(10)} height={hp(5)} />
-                <TouchableOpacity
-                  onPress={() => {
-                    startChatWithUser();
-                  }}>
-                  <Chat width={wp(10)} height={hp(5)} />
-                </TouchableOpacity>
-              </View>
-              <View
-                style={{
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                  marginTop: hp(5),
-                  paddingHorizontal: wp(9),
-                  marginBottom: hp(1),
-                }}>
-                <View style={{flexDirection: 'row'}}>
-                  <Clock width={wp(6)} height={hp(5)} />
-                  <View style={{alignItems: 'center', marginLeft: wp(3)}}>
-                    <Text style={styles.numberplate}>Time</Text>
-                    <Text style={styles.username}>10 min</Text>
-                  </View>
-                </View>
-                <View style={styles.line} />
-                <View style={{flexDirection: 'row'}}>
-                  <Money width={wp(8)} height={hp(5)} />
-                  <View style={{alignItems: 'center', marginLeft: wp(3)}}>
-                    <Text style={styles.numberplate}>Amount</Text>
-                    <Text style={styles.username}>$ 234</Text>
-                  </View>
-                </View>
-              </View>
-              {confirm_ride === false ? (
-                <CustomButtonhere
-                  title={'Confirm Ride'}
-                  widthset={80}
-                  topDistance={3}
-                  // loading={loading}
-                  // disabled={disable}
-                  onPress={() => {
-                    setConfirmRide(true);
-                    //navigation.navigate('WelcomeScreen');
-                  }}
-                />
-              ) : (
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    marginTop: hp(3),
-                  }}>
-                  <View
-                    style={{
-                      backgroundColor: Colors.Appthemecolor,
-                      width: wp(40),
-                      height: hp(6),
-                      borderRadius: wp(3),
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}>
-                    <Text style={styles.btntext}>Share Location</Text>
-                  </View>
-                  <View
-                    style={{
-                      backgroundColor: Colors.Appthemecolor,
-                      width: wp(40),
-                      height: hp(6),
-                      borderRadius: wp(3),
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}>
-                    <Text style={styles.btntext}>Add a Stop</Text>
-                  </View>
-                </View>
-              )}
+        {click_add=== true?
+        <View style={{flexDirection:'row',marginTop:hp(2)}}>
+            <Text style={styles.username}>Stop Location:</Text>
+            <Text style={styles.numberplate}> Lorem ipsum lorem ipsum lorem ipsum</Text>
+        </View>
+        :null
+      }
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            marginTop:click_add=== true?hp(3): hp(5),
+            paddingHorizontal: wp(9),
+            marginBottom: hp(1),
+          }}>
+          <View style={{flexDirection: 'row'}}>
+            <Clock width={wp(6)} height={hp(5)} />
+            <View style={{alignItems: 'center', marginLeft: wp(3)}}>
+              <Text style={styles.numberplate}>Time</Text>
+              <Text style={styles.username}>10 min</Text>
+            </View>
+          </View>
+          <View style={styles.line} />
+          <View style={{flexDirection: 'row'}}>
+            <Money width={wp(8)} height={hp(5)} />
+            <View style={{alignItems: 'center', marginLeft: wp(3)}}>
+              <Text style={styles.numberplate}>Amount</Text>
+              <Text style={styles.username}>$ 234</Text>
             </View>
           </View>
         </View>
+        {confirm_ride === false ? (
+          <CustomButtonhere
+            title={'Confirm Ride'}
+            widthset={80}
+            topDistance={3}
+            // loading={loading}
+            // disabled={disable}
+            onPress={() => {
+              setConfirmRide(true);
+              //navigation.navigate('WelcomeScreen');
+            }}
+          />
+        ) : (
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              marginTop: hp(3),
+            }}>
+            <View
+              style={{
+                backgroundColor: Colors.Appthemecolor,
+                width: wp(40),
+                height: hp(6),
+                borderRadius: wp(3),
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+              <Text style={styles.btntext}>{"Share Location"}</Text>
+            </View>
+            <TouchableOpacity
+              style={{
+                backgroundColor: Colors.Appthemecolor,
+                width: wp(40),
+                height: hp(6),
+                borderRadius: wp(3),
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+              onPress={()=>  {navigation.navigate('SearchLocation',{navplace:'ongoingTrip'}),setClick_add(true)}}
+              >
+              <Text style={styles.btntext}> {click_add=== true?"Edit Stop Location":"Add a Stop"}</Text>
+            </TouchableOpacity>
+          </View>
+        )}
+      </View>
+    </View>
+:
+<TouchableOpacity 
+onPress={()=> setModalVisible(true)}
+style={[styles.lastView]}>
+ <View
+   style={{
+     backgroundColor: 'white',
+     height: hp(34),
+     paddingTop: hp(2),
+     width: wp(100),
+     borderTopLeftRadius: wp(8),
+     borderTopRightRadius: wp(8),
+     paddingHorizontal: wp(5),
+   }}>
+   <View
+     style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+     <View style={{flexDirection: 'row', alignItems: 'center'}}>
+       <Avatar.Icon
+         size={hp(6)}
+         color={'#DFDCD4'}
+         style={{backgroundColor: '#DFDCD4'}}
+       />
+       <View style={{width: wp(50), marginLeft: wp(3)}}>
+         <Text style={styles.username}>Norman Gordon</Text>
+         <Text style={styles.numberplate}>Plate No: 64213-T-2{predata.navplace}</Text>
+       </View>
+     </View>
+     <Call width={wp(10)} height={hp(5)} />
+     <TouchableOpacity
+       onPress={() => {
+         startChatWithUser();
+       }}>
+       <Chat width={wp(10)} height={hp(5)} />
+     </TouchableOpacity>
+   </View>
+
+   {click_add=== true?
+   <View style={{flexDirection:'row',marginTop:hp(2)}}>
+       <Text style={styles.username}>Stop Location:</Text>
+       <Text style={styles.numberplate}> Lorem ipsum lorem ipsum lorem ipsum</Text>
+   </View>
+   :null
+ }
+   <View
+     style={{
+       flexDirection: 'row',
+       justifyContent: 'space-between',
+       marginTop:click_add=== true?hp(3): hp(5),
+       paddingHorizontal: wp(9),
+       marginBottom: hp(1),
+     }}>
+     <View style={{flexDirection: 'row'}}>
+       <Clock width={wp(6)} height={hp(5)} />
+       <View style={{alignItems: 'center', marginLeft: wp(3)}}>
+         <Text style={styles.numberplate}>Time</Text>
+         <Text style={styles.username}>10 min</Text>
+       </View>
+     </View>
+     <View style={styles.line} />
+     <View style={{flexDirection: 'row'}}>
+       <Money width={wp(8)} height={hp(5)} />
+       <View style={{alignItems: 'center', marginLeft: wp(3)}}>
+         <Text style={styles.numberplate}>Amount</Text>
+         <Text style={styles.username}>$ 234</Text>
+       </View>
+     </View>
+   </View>
+   {confirm_ride === false ? (
+     <CustomButtonhere
+       title={'Confirm Ride'}
+       widthset={80}
+       topDistance={3}
+       // loading={loading}
+       // disabled={disable}
+       onPress={() => {
+         setConfirmRide(true);
+         //navigation.navigate('WelcomeScreen');
+       }}
+     />
+   ) : (
+     <View
+       style={{
+         flexDirection: 'row',
+         justifyContent: 'space-between',
+         alignItems: 'center',
+         marginTop: hp(3),
+       }}>
+       <View
+         style={{
+           backgroundColor: Colors.Appthemecolor,
+           width: wp(40),
+           height: hp(6),
+           borderRadius: wp(3),
+           alignItems: 'center',
+           justifyContent: 'center',
+         }}>
+         <Text style={styles.btntext}>{"Share Location"}</Text>
+       </View>
+       <TouchableOpacity
+         style={{
+           backgroundColor: Colors.Appthemecolor,
+           width: wp(40),
+           height: hp(6),
+           borderRadius: wp(3),
+           alignItems: 'center',
+           justifyContent: 'center',
+         }}
+         onPress={()=>  {navigation.navigate('SearchLocation',{navplace:'ongoingTrip'}),setClick_add(true)}}
+         >
+         <Text style={styles.btntext}> {click_add=== true?"Edit Stop Location":"Add a Stop"}</Text>
+       </TouchableOpacity>
+     </View>
+   )}
+ </View>
+</TouchableOpacity>
+}
+     
+
+        </View>
+  
       </ScrollView>
+      <DestinationModal
+        modalVisible={modalVisible}
+        text={'You have Arrived at Your Destination'}
+        btn_text={'Go to Create Profile'}
+        subtext={'See you on the Next Trip :)'}
+        type={'single_btn'}
+        onPress={() => {
+          setModalVisible(false);
+          navigation.navigate('Review');
+        }}
+      />
     </SafeAreaView>
   );
 };

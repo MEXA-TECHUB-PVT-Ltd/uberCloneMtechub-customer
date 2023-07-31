@@ -1,7 +1,5 @@
 import React, {useEffect, useState, useRef} from 'react';
 import {
-  SafeAreaView,
-  ImageBackground,
   Dimensions,
   View,
   Text,
@@ -10,12 +8,8 @@ import {
   ScrollView,
 } from 'react-native';
 
-//////app icons////////////////
-import Ionicons from 'react-native-vector-icons/Ionicons';
-
 ///////////////////app components////////////
 import CustomButtonhere from '../../../components/Button/CustomButton';
-import CustomTextInput from '../../../components/TextInput/CustomTextInput';
 import SelectMenu from '../../../components/SelectMenu/SelectMenu';
 import SearchTextInput from '../../../components/TextInput/SearchInput';
 import LottieModal from '../../../components/LottieModal/LottieModal';
@@ -23,9 +17,6 @@ import LottieModal from '../../../components/LottieModal/LottieModal';
 ////////app styles///////////////////
 //import styles from './styles';
 import styles from '../../Dashboard/styles';
-
-////////colors/////////
-import Colors from '../../../utils/Colors';
 
 ////height and width///////////////////
 import {
@@ -286,7 +277,7 @@ const PaymentMethod = ({navigation, route}) => {
               onPress={() => {
                 //navigation.navigate('Login'),
                  setModalVisible(false);
-                 navigation.navigate('OnGoingTrip');
+                 navigation.navigate('OnGoingTrip',{navplace:'Payment'});
               }}
             />
           </View>

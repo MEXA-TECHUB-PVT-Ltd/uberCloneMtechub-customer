@@ -68,14 +68,17 @@ export const DrawerContent = props => {
         showsHorizontalScrollIndicator={false}>
         <View style={styles.drawerContent}>
           <View style={styles.userInfoSection}>
-            <View
+            <TouchableOpacity
+            activeOpacity={0.6}
               style={{
                 alignSelf: 'center',
                 alignItems: 'center',
                 justifyContent: 'center',
                 width: wp(59),
                 height: hp(25),
-              }}>
+              }}
+              onPress={()=> navigation.navigate('ProfileNav')}
+              >
               <Image
                 source={appImages.DrawerBG}
                 style={{width: wp(82), height: hp(30)}}
@@ -90,7 +93,7 @@ export const DrawerContent = props => {
                 <Text style={styles.username}>John Doe</Text>
                 <Text style={styles.useremail}>example@gmail.com</Text>
               </View>
-            </View>
+            </TouchableOpacity>
           </View>
           <View
             style={{
