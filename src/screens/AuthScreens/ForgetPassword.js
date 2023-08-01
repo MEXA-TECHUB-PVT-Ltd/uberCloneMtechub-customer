@@ -60,7 +60,6 @@ const ForgetPassword = ({navigation}) => {
         term={password}
         view_widthset={85}
         textinput_widthset={75}
-        placeholder="Password"
         onTermChange={newPassword => setPassword(newPassword)}
         PlaceholderText={'Phone Number*'}
       />

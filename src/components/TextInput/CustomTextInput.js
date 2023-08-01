@@ -53,13 +53,14 @@ const CustomTextInput = ({
   focus
 }) => {
   const [isfocused, setisFocused] = useState(false);
-
   return (
     <View>
       <View>
+        {PlaceholderText === undefined?null:
         <Text style={[styles.PlaceHolderText,{color: focus === "true" ||isfocused == true ? 'black' : '#A7A9AC'}]}>
           {PlaceholderText}
         </Text>
+}
       </View>
       <View
         style={[

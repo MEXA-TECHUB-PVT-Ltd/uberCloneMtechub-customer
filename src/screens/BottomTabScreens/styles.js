@@ -144,4 +144,3 @@ height:hp(90),
 },
   });
   export default styles;
-  

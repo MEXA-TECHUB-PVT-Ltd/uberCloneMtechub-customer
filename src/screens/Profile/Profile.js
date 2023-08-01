@@ -1,16 +1,15 @@
 import React, {useEffect, useState, useRef} from 'react';
 import {
   SafeAreaView,
-  FlatList,
-  StatusBar,
   ScrollView,
   View,
   Text,
+  StyleSheet
 } from 'react-native';
 
 //////////////////////app components///////////////
-import CustomHeader from '../../../components/Header/CustomHeader';
-import SettingsMenu from '../../../components/SettingsView/SettingsMenu';
+import CustomHeader from '../../components/Header/CustomHeader';
+import SettingsMenu from '../../components/SettingsView/SettingsMenu';
 
 //////////////////height and width/////////////////////
 import {
@@ -18,22 +17,19 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
 
-/////////////////////app styles////////////
-import styles from './styles';
-
 //////////////////ICONS/////////////////
 import Icon from 'react-native-vector-icons/Ionicons';
 
 /////////////app fonts///////////
-import {fontFamily} from '../../../constants/fonts';
+import {fontFamily} from '../../constants/fonts';
 
 
 //////////svgs//////////////
-import Language from "../../../assets/svgs/Profile/Language_icon.svg"
-import  Notification from "../../../assets/svgs/Profile/notification.svg"
-import Privacy from "../../../assets/svgs/Profile/Shield_icon.svg"
-import Terms from "../../../assets/svgs/Profile/Document_icon.svg"
-import Friends from "../../../assets/svgs/Profile/MultipleUser_icon.svg"
+import Language from "../../assets/svgs/Profile/Language_icon.svg"
+import  Notification from "../../assets/svgs/Profile/notification.svg"
+import Privacy from "../../assets/svgs/Profile/Shield_icon.svg"
+import Terms from "../../assets/svgs/Profile/Document_icon.svg"
+import Friends from "../../assets/svgs/Profile/MultipleUser_icon.svg"
 
 
 
@@ -137,3 +133,10 @@ const Profile = ({navigation}) => {
 };
 
 export default Profile;
+const styles = StyleSheet.create({
+    container:
+    {
+      flex: 1,
+  backgroundColor:'white'
+    },
+  });

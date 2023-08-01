@@ -63,7 +63,7 @@ const OnboardingScreen = ({navigation}) => {
             image={require('../../assets/images/RideBook.png')}
             maintext={'Select Your Destination'}
             subtext={
-              "Let us know your desired drop-off location, and we'll take care of the rest."+currentIndex
+              "Let us know your desired drop-off location, and we'll take care of the rest."
             }
           />
             <OnboardingComponents
@@ -77,7 +77,7 @@ const OnboardingScreen = ({navigation}) => {
             image={require('../../assets/images/NearByRide.png')}
             maintext={'Get the Best Ride Nearby You'}
             subtext={
-              "We're dedicated to connecting you with the best available ride options in your vicinity."+currentIndex
+              "We're dedicated to connecting you with the best available ride options in your vicinity."
             }
           />
         </Swiper>

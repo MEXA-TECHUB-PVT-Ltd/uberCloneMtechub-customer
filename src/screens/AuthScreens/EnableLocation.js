@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   },
   endtext: {
     color: '#000',
-    fontSize: hp(1.6),
-    fontFamily: fontFamily.Nunito_Bold,
+    fontSize: hp(1.8),
+    fontFamily: fontFamily.Nunito_SemiBold,
   },
 });
